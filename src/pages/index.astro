@@ -1,16 +1,41 @@
 ---
-
+import SiteLayout from "../layouts/SiteLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import PlaceholderImage from "../components/PlaceholderImage.astro";
+import ClinicCard from "../components/ClinicCard.astro";
+import { clinics } from "../data/clinics";
 ---
+<SiteLayout>
+  <Fragment slot="header"><Header /></Fragment>
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+  <section class="container py-12">
+    <div class="grid gap-8 md:grid-cols-2 items-center">
+      <div>
+        <h1 class="text-3xl md:text-4xl font-semibold tracking-tight">
+          Integrated Health Professional Centre
+        </h1>
+        <p class="mt-4 text-slate-700">
+          A co-owned building at 1378 Bedford Highway with shared reception and
+          independent clinics providing collaborative care.
+        </p>
+        <div class="mt-6">
+          <a href="/clinics" class="inline-block rounded-lg bg-teal-600 text-white px-4 py-2 hover:bg-teal-700">
+            Explore clinics
+          </a>
+        </div>
+      </div>
+      <PlaceholderImage ratio="aspect-[4/3]" />
+    </div>
+  </section>
+
+  <section class="container pb-16">
+    <h2 class="text-xl font-semibold">Clinics at IHPC</h2>
+    <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {clinics.map((c) => <ClinicCard {...c} />)}
+    </div>
+  </section>
+
+  <Fragment slot="footer"><Footer /></Fragment>
+</SiteLayout>
+

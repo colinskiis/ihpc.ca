@@ -1,0 +1,14 @@
+---
+const address = "1378 Bedford Highway, Bedford, NS B4A 1E2";
+const q = encodeURIComponent(address);
+---
+<div class="rounded-xl overflow-hidden border">
+  <iframe
+    src={`https://www.google.com/maps?q=${q}&output=embed`}
+    width="100%"
+    height="360"
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+  ></iframe>
+</div>
+

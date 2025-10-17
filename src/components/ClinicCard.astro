@@ -1,0 +1,25 @@
+---
+interface Props {
+  name: string;
+  blurb?: string;
+  url?: string;
+  phone?: string;
+}
+const { name, blurb = "Independent clinic within IHPC.", url, phone } = Astro.props as Props;
+---
+<article class="rounded-2xl border bg-white hover:shadow-md transition p-6">
+  <h3 class="text-lg font-semibold">{name}</h3>
+  <p class="mt-2 text-slate-600">{blurb}</p>
+  <div class="mt-3">
+    {url ? (
+      <a class="text-teal-700 underline underline-offset-4" href={url} rel="noopener">Visit website</a>
+    ) : phone ? (
+      <a class="text-teal-700 underline underline-offset-4" href={`tel:${phone.replace(/\s+/g,'')}`}>
+        Call {phone}
+      </a>
+    ) : (
+      <span class="text-slate-500">Contact details coming soon</span>
+    )}
+  </div>
+</article>
+

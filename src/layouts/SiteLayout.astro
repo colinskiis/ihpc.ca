@@ -1,0 +1,43 @@
+---
+import "../styles/global.css";
+
+const {
+  title = "Integrated Health Professional Centre",
+  description =
+    "A co-owned multi-clinic medical building at 1378 Bedford Highway with shared reception and independent practices.",
+} = Astro.props;
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <link rel="icon" href="/favicon.svg" />
+    <title>{title}</title>
+
+    <script type="application/ld+json">
+      {JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "MedicalClinic",
+        name: "Integrated Health Professional Centre",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "1378 Bedford Highway",
+          addressLocality: "Bedford",
+          addressRegion: "NS",
+          postalCode: "B4A 1E2",
+          addressCountry: "CA",
+        },
+        url: "https://ihpc.ca",
+        description:
+          "A co-owned multi-clinic medical building with shared reception and independent practices.",
+      })}
+    </script>
+  </head>
+  <body class="bg-slate-50 text-slate-900 antialiased">
+    <slot name="header" />
+    <main class="min-h-[70vh]"><slot /></main>
+    <slot name="footer" />
+  </body>
+  
+</html>

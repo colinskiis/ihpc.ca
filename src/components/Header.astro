@@ -1,0 +1,22 @@
+---
+const nav = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/clinics", label: "Clinics" },
+  { href: "/contact", label: "Contact" },
+];
+---
+<header class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b">
+  <div class="container py-3 flex items-center justify-between">
+    <a href="/" class="font-semibold tracking-tight">Integrated Health Professional Centre</a>
+    <nav class="flex gap-6 text-sm">
+      {nav.map((item) => (
+        <a class="hover:text-teal-600" href={item.href}>
+          {item.label}
+        </a>
+      ))}
+    </nav>
+  </div>
+  
+</header>
+

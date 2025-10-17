@@ -1,0 +1,24 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import ClinicCard from "../components/ClinicCard.astro";
+import { clinics } from "../data/clinics";
+---
+<SiteLayout title="Clinics – Integrated Health Professional Centre">
+  <Fragment slot="header"><Header /></Fragment>
+
+  <section class="container py-12">
+    <h1 class="text-2xl font-semibold">Clinics</h1>
+    <p class="mt-2 text-slate-700 max-w-2xl">
+      Each clinic at IHPC operates independently. For appointments, hours, and
+      services, please contact clinics directly or visit their websites below.
+    </p>
+    <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {clinics.map((c) => <ClinicCard {...c} />)}
+    </div>
+  </section>
+
+  <Fragment slot="footer"><Footer /></Fragment>
+</SiteLayout>
+

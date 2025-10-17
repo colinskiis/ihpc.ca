@@ -1,0 +1,31 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+<SiteLayout title="About – Integrated Health Professional Centre">
+  <Fragment slot="header"><Header /></Fragment>
+
+  <section class="container py-12 max-w-3xl">
+    <h1 class="text-2xl font-semibold">About</h1>
+    <p class="mt-4 text-slate-700">
+      The Integrated Health Professional Centre (IHPC) is a co-owned medical
+      building with shared reception and independent clinics. Our model
+      supports collaborative care while allowing each practice to manage its
+      own operations.
+    </p>
+    <h2 class="mt-8 text-xl font-semibold">Accessibility</h2>
+    <p class="mt-2 text-slate-700">
+      The building provides accessible entry and facilities. Parking is
+      available on-site.
+    </p>
+    <h2 class="mt-8 text-xl font-semibold">Location</h2>
+    <p class="mt-2 text-slate-700">
+      1378 Bedford Highway, Bedford, NS B4A 1E2. Transit access via Bedford
+      Highway routes.
+    </p>
+    <p class="mt-6 text-slate-500">Photos and floor plan coming soon.</p>
+  </section>
+
+  <Fragment slot="footer"><Footer /></Fragment>
+</SiteLayout>

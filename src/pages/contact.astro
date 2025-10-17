@@ -1,0 +1,31 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import MapEmbed from "../components/MapEmbed.astro";
+---
+<SiteLayout title="Contact – Integrated Health Professional Centre">
+  <Fragment slot="header"><Header /></Fragment>
+
+  <section class="container py-12 grid gap-8 md:grid-cols-2 items-start">
+    <div>
+      <h1 class="text-2xl font-semibold">Contact</h1>
+      <p class="mt-4 text-slate-700">
+        For general inquiries about the building or reception, email
+        <a href="mailto:email@example.com">email@example.com</a>.
+      </p>
+      <p class="mt-2 text-slate-700">
+        For medical appointments and clinic-specific questions, please contact
+        clinics directly via their websites or phone numbers.
+      </p>
+      <h2 class="mt-8 text-xl font-semibold">Address</h2>
+      <p class="mt-2 text-slate-700">
+        1378 Bedford Highway<br />
+        Bedford, NS B4A 1E2
+      </p>
+    </div>
+    <MapEmbed />
+  </section>
+
+  <Fragment slot="footer"><Footer /></Fragment>
+</SiteLayout>
