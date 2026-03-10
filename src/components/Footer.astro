@@ -76,9 +76,12 @@ const quickLinks = [
         <p class="text-sm text-slate-400">
           &copy; {new Date().getFullYear()} Integrated Health Professional Centre. All rights reserved.
         </p>
-        <p class="text-sm text-slate-500">
-          Each clinic operates independently within IHPC.
-        </p>
+        <div class="flex flex-wrap items-center gap-4 text-sm text-slate-500">
+          <span>Each clinic operates independently within IHPC.</span>
+          <span class="hidden md:inline text-slate-700">·</span>
+          <a href="/privacy" class="hover:text-teal-400 transition-colors">Privacy Policy</a>
+          <a href="/disclaimer" class="hover:text-teal-400 transition-colors">Disclaimer</a>
+        </div>
       </div>
     </div>
   </div>

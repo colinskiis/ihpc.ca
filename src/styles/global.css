@@ -25,6 +25,8 @@ html, body {
 body {
   background-color: var(--color-background);
   color: var(--color-text);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 400;
   font-feature-settings: "kern" 1, "liga" 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -32,9 +34,10 @@ body {
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lora', Georgia, serif;
   font-weight: 600;
   line-height: 1.25;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.015em;
   color: #0f172a;
 }
 

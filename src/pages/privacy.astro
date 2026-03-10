@@ -1,0 +1,98 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+<SiteLayout title="Privacy Policy – Integrated Health Professional Centre">
+  <Fragment slot="header"><Header /></Fragment>
+
+  <!-- Page Header -->
+  <section class="bg-gradient-to-br from-slate-50 via-white to-teal-50 py-12 md:py-16">
+    <div class="container">
+      <h1>Privacy Policy</h1>
+      <p class="mt-4 text-lg text-slate-600 max-w-2xl">
+        How the Integrated Health Professional Centre collects, uses, and protects information
+        through this website.
+      </p>
+      <p class="mt-2 text-sm text-slate-500">Last updated: March 2026</p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="section">
+    <div class="container">
+      <div class="max-w-3xl space-y-10">
+
+        <div>
+          <h2 class="text-2xl">About This Policy</h2>
+          <p class="mt-4 text-slate-600">
+            This privacy policy applies to the IHPC website (ihpc.ca) and describes how
+            Integrated Health Professional Centre handles information collected through this site.
+            It does not govern the patient records or clinical data held by the individual clinics
+            operating within IHPC — each clinic maintains its own privacy practices in accordance
+            with applicable legislation, including the <em>Personal Health Information Act</em> (Nova Scotia)
+            and <em>PIPEDA</em>.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl">Information We Collect</h2>
+          <p class="mt-4 text-slate-600">
+            This website does not collect personal information unless you voluntarily provide it
+            (for example, by contacting us via phone or email). We do not operate online
+            appointment booking through this site.
+          </p>
+          <p class="mt-4 text-slate-600">
+            Like most websites, our hosting provider may collect standard server logs including
+            IP addresses, browser type, and pages visited. This information is used solely for
+            security monitoring and aggregate analytics and is not linked to individuals.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl">How We Use Information</h2>
+          <p class="mt-4 text-slate-600">
+            Any information you provide by contacting IHPC directly is used only to respond to
+            your inquiry. We do not sell, rent, or share personal information with third parties
+            for marketing purposes.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl">Third-Party Services</h2>
+          <p class="mt-4 text-slate-600">
+            This website embeds Google Maps to display our location. Google may collect data in
+            accordance with their own privacy policy when you interact with the map. Links to
+            individual clinic websites and booking platforms are provided for your convenience;
+            those services have their own privacy policies.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl">Your Health Information</h2>
+          <p class="mt-4 text-slate-600">
+            Patient health records are held by the individual clinics, not by IHPC. If you have
+            questions about how your health information is managed, please contact the relevant
+            clinic directly. Each clinic is regulated and operates in compliance with Nova Scotia
+            health privacy legislation.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl">Contact</h2>
+          <p class="mt-4 text-slate-600">
+            If you have questions about this privacy policy, you may reach us at:
+          </p>
+          <address class="mt-4 not-italic text-slate-600 space-y-1">
+            <p>Integrated Health Professional Centre</p>
+            <p>1378 Bedford Highway, Bedford, NS B4A 1E2</p>
+            <p><a href="tel:902-800-3055" class="text-teal-600 hover:text-teal-700">902-800-3055</a></p>
+          </address>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <Fragment slot="footer"><Footer /></Fragment>
+</SiteLayout>

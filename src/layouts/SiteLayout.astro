@@ -4,7 +4,7 @@ import "../styles/global.css";
 const {
   title = "Integrated Health Professional Centre",
   description =
-    "A co-owned multi-clinic medical building at 1378 Bedford Highway with shared reception and independent practices.",
+    "A co-owned multi-clinic medical building at 1378 Bedford Highway with a shared waiting area and independent practices.",
 } = Astro.props;
 ---
 <html lang="en">
@@ -13,6 +13,9 @@ const {
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
     <link rel="icon" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:wght@600;700&display=swap" rel="stylesheet" />
     <link rel="canonical" href="https://ihpc.ca" />
     <meta property="og:url" content="https://ihpc.ca" />
     <meta property="og:title" content="Integrated Health Professional Centre" />
@@ -34,7 +37,7 @@ const {
         },
         url: "https://ihpc.ca",
         description:
-          "A co-owned multi-clinic medical building with shared reception and independent practices.",
+          "A co-owned multi-clinic medical building with a shared waiting area and independent practices.",
       })}
     </script>
   </head>

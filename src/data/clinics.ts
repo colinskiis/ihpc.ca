@@ -18,6 +18,7 @@ export interface Clinic {
   type: "family-medicine" | "naturopathic" | "pain-management";
   tagline: string;
   description: string;
+  address: string;
   url?: string;
   phone?: string;
   fax?: string;
@@ -33,6 +34,7 @@ export const clinics: Clinic[] = [
     type: "family-medicine",
     tagline: "Comprehensive family medicine for all ages",
     description: "Monaghan Medical Clinic provides comprehensive primary care services with a focus on building lasting relationships with patients and families. Our physicians take the time to listen and develop personalized care plans.",
+    address: "1378 Bedford Highway, Bedford, NS B4A 1E2",
     url: "https://monaghanmed.ca/",
     phone: "902-800-3055",
     hours: "Monday–Friday: 8:30 AM – 5:00 PM (by appointment)",
@@ -92,6 +94,7 @@ export const clinics: Clinic[] = [
     type: "naturopathic",
     tagline: "Evidence-based naturopathic medicine",
     description: "Optimal Wellbeing Clinic offers integrative naturopathic healthcare that combines the wisdom of traditional healing methods with modern scientific research. Our naturopathic doctors develop individualized treatment plans focused on treating the whole person and addressing root causes.",
+    address: "1378 Bedford Highway, Bedford, NS B4A 1E2",
     url: "https://optimalwellbeing.ca/",
     phone: "902-406-4424",
     fax: "902-406-4428",
@@ -128,7 +131,8 @@ export const clinics: Clinic[] = [
         memberships: [
           "Nova Scotia Association of Naturopathic Doctors",
           "Canadian Association of Naturopathic Doctors"
-        ]
+        ],
+        bookingUrl: "https://macleodnaturopathic.janeapp.com/"
       },
       {
         name: "Dr. Joann Osbourne",
@@ -184,6 +188,7 @@ export const clinics: Clinic[] = [
     type: "pain-management",
     tagline: "Specialized care for chronic pain conditions",
     description: "The Chronic Pain Management Clinic provides specialized assessment and treatment for patients living with chronic pain. Dr. Hernandez uses a comprehensive, injection-based approach to help patients reduce pain and improve quality of life, working collaboratively to find solutions beyond medication alone.",
+    address: "1378 Bedford Highway, Bedford, NS B4A 1E2",
     phone: "902-407-4545",
     hours: "Monday–Friday: 8:00 AM – 5:00 PM",
     doctors: [

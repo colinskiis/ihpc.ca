@@ -2,6 +2,7 @@
 import SiteLayout from "../../layouts/SiteLayout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
+import MapEmbed from "../../components/MapEmbed.astro";
 import { clinics, getClinicBySlug } from "../../data/clinics";
 import type { Clinic, Doctor } from "../../data/clinics";
 
@@ -208,20 +209,28 @@ function getClinicTypeLabel(type: string): string {
                 1378 Bedford Highway<br />
                 Bedford, NS B4A 1E2
               </p>
-              <a href="/contact" class="mt-4 inline-flex items-center gap-2 text-teal-600 hover:text-teal-700 font-medium">
+              <a
+                href={`https://maps.google.com/?q=${encodeURIComponent(clinic.address)}`}
+                target="_blank"
+                rel="noopener"
+                class="mt-4 inline-flex items-center gap-2 text-teal-600 hover:text-teal-700 font-medium"
+              >
                 Get Directions
                 <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                 </svg>
               </a>
+              <div class="mt-4">
+                <MapEmbed address={clinic.address} />
+              </div>
             </div>
           </div>
 
           <!-- Contact Card -->
           <div class="card p-6 bg-teal-50 border-teal-100">
-            <h3 class="text-lg font-semibold">Ready to Book?</h3>
+            <h3 class="text-lg font-semibold">Get in Touch</h3>
             <p class="mt-2 text-slate-600">
-              Contact us to schedule an appointment or learn more about our services.
+              Call this clinic directly for information about services or to speak with their team.
             </p>
             {clinic.phone && (
               <a href={`tel:${clinic.phone.replace(/\s+/g, '')}`} class="mt-4 btn btn-primary w-full justify-center">
