@@ -99,7 +99,6 @@ export const clinics: Clinic[] = [
     address: "1378 Bedford Highway, Bedford, NS B4A 1E2",
     url: "https://optimalwellbeing.ca/",
     phone: "902-406-4424",
-    fax: "902-406-4428",
     hours: "By appointment",
     doctors: [
       {
@@ -136,7 +135,8 @@ export const clinics: Clinic[] = [
         memberships: [
           "Canadian Association of Naturopathic Doctors",
           "Nova Scotia Association of Naturopathic Doctors"
-        ]
+        ],
+        fax: "902-406-4428"
       },
       {
         name: "Dr. Colin MacLeod",
