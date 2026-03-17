@@ -8,17 +8,20 @@ const services = [
   {
     icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 2v2"/><path d="M5 2v2"/><path d="M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1"/><path d="M8 15a6 6 0 0 0 12 0v-3"/><circle cx="20" cy="10" r="2"/></svg>`,
     title: "Family Medicine",
-    description: "Comprehensive primary care for patients of all ages, from routine checkups to chronic disease management."
+    description: "Comprehensive primary care for patients of all ages, from routine checkups to chronic disease management.",
+    href: "/clinics/monaghan-medical"
   },
   {
     icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>`,
     title: "Naturopathic Medicine",
-    description: "Evidence-based natural healthcare combining traditional healing wisdom with modern scientific research."
+    description: "Evidence-based natural healthcare combining traditional healing wisdom with modern scientific research.",
+    href: "/clinics/optimal-wellbeing"
   },
   {
     icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>`,
     title: "Pain Management",
-    description: "Specialized care for chronic pain conditions using comprehensive assessment and injection therapies."
+    description: "Specialized care for chronic pain conditions using comprehensive assessment and injection therapies.",
+    href: "/clinics/chronic-pain"
   }
 ];
 
@@ -73,13 +76,19 @@ const features = [
 
       <div class="grid gap-8 md:grid-cols-3">
         {services.map((service) => (
-          <div class="p-8 rounded-2xl bg-white hover:bg-teal-50 transition-colors group">
+          <a href={service.href} class="p-8 rounded-2xl bg-white hover:bg-teal-50 hover:-translate-y-1 hover:shadow-md transition-all group flex flex-col">
             <div class="w-12 h-12 mx-auto rounded-xl bg-white shadow-sm flex items-center justify-center text-teal-600 group-hover:bg-teal-600 group-hover:text-white transition-colors">
               <Fragment set:html={service.icon} />
             </div>
             <h3 class="mt-5 text-xl font-semibold">{service.title}</h3>
-            <p class="mt-3 text-slate-600">{service.description}</p>
-          </div>
+            <p class="mt-3 text-slate-600 flex-1">{service.description}</p>
+            <div class="mt-5 flex items-center gap-1 text-teal-600 text-sm font-medium">
+              Learn more
+              <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </div>
+          </a>
         ))}
       </div>
     </div>
