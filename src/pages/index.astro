@@ -39,10 +39,6 @@ const features = [
     <div class="container relative">
       <div class="py-16 md:py-24 lg:py-32">
         <div class="max-w-3xl">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-100 text-teal-700 text-sm font-medium mb-6">
-            <span class="w-2 h-2 rounded-full bg-teal-500"></span>
-            Now accepting new patients
-          </div>
           <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight">
             Your health, <span class="text-teal-600">our priority</span>
           </h1>
@@ -68,7 +64,7 @@ const features = [
   </section>
 
   <!-- Services Overview -->
-  <section class="section bg-white">
+  <section class="section bg-slate-50">
     <div class="container">
       <div class="section-header">
         <h2>Comprehensive Healthcare Services</h2>
@@ -77,7 +73,7 @@ const features = [
 
       <div class="grid gap-8 md:grid-cols-3">
         {services.map((service) => (
-          <div class="p-8 rounded-2xl bg-slate-50 hover:bg-teal-50 transition-colors group">
+          <div class="p-8 rounded-2xl bg-white hover:bg-teal-50 transition-colors group">
             <div class="w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center text-teal-600 group-hover:bg-teal-600 group-hover:text-white transition-colors">
               <Fragment set:html={service.icon} />
             </div>
@@ -90,7 +86,7 @@ const features = [
   </section>
 
   <!-- Clinics Section -->
-  <section class="section gradient-subtle">
+  <section class="section bg-white">
     <div class="container">
       <div class="section-header">
         <h2>Our Clinics</h2>
@@ -130,7 +126,7 @@ const features = [
   </section>
 
   <!-- Why Choose IHPC -->
-  <section class="section bg-white">
+  <section class="section bg-slate-50">
     <div class="container">
       <div class="grid gap-12 lg:grid-cols-2 items-center">
         <div>
