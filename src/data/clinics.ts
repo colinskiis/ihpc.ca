@@ -9,6 +9,8 @@ export interface Doctor {
   services?: string[];
   bookingUrl?: string;
   fax?: string;
+  hours?: string;
+  website?: string;
   memberships?: string[];
 }
 
@@ -168,7 +170,10 @@ export const clinics: Clinic[] = [
           "Nova Scotia Association of Naturopathic Doctors",
           "Canadian Association of Naturopathic Doctors"
         ],
-        bookingUrl: "https://macleodnaturopathic.janeapp.com/"
+        bookingUrl: "https://macleodnaturopathic.janeapp.com/",
+        fax: "800-689-8264",
+        hours: "Mon–Fri: 7:30 AM – 3:30 PM",
+        website: "https://drcolinmacleod.com"
       }
     ],
     services: [

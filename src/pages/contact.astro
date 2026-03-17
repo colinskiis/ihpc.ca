@@ -70,16 +70,35 @@ import { clinics } from "../data/clinics";
             <div class="mt-6 space-y-4">
               {clinics.map((clinic) => (
                 <div class="p-4 rounded-xl bg-slate-50 hover:bg-teal-50 transition-colors">
-                  <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-                    <div>
+                  <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
+                    <div class="space-y-1">
                       <h4 class="font-semibold text-slate-900">{clinic.name}</h4>
                       {clinic.phone && (
-                        <a href={`tel:${clinic.phone.replace(/\s+/g, '')}`} class="text-teal-600 hover:text-teal-700">
-                          {clinic.phone}
-                        </a>
+                        <div class="flex items-center gap-2 text-sm">
+                          <span class="text-slate-500">Phone:</span>
+                          <a href={`tel:${clinic.phone.replace(/\s+/g, '')}`} class="text-teal-600 hover:text-teal-700">
+                            {clinic.phone}
+                          </a>
+                        </div>
+                      )}
+                      {clinic.fax && (
+                        <div class="flex items-center gap-2 text-sm">
+                          <span class="text-slate-500">Fax:</span>
+                          <span class="text-slate-700">{clinic.fax}</span>
+                        </div>
+                      )}
+                      {clinic.doctors.some(d => d.fax) && (
+                        <div class="mt-2 space-y-1">
+                          {clinic.doctors.filter(d => d.fax).map(doctor => (
+                            <div class="flex items-center gap-2 text-sm">
+                              <span class="text-slate-500">{doctor.name} Fax:</span>
+                              <span class="text-slate-700">{doctor.fax}</span>
+                            </div>
+                          ))}
+                        </div>
                       )}
                     </div>
-                    <a href={`/clinics/${clinic.slug}`} class="text-sm text-slate-500 hover:text-teal-600">
+                    <a href={`/clinics/${clinic.slug}`} class="text-sm text-slate-500 hover:text-teal-600 shrink-0">
                       View Details
                     </a>
                   </div>
@@ -119,8 +138,11 @@ import { clinics } from "../data/clinics";
         <div class="mt-8 grid gap-6 md:grid-cols-3">
           <div class="text-center p-6">
             <div class="w-14 h-14 mx-auto rounded-2xl bg-teal-100 flex items-center justify-center">
-              <svg class="w-7 h-7 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
+              <!-- Lucide: car -->
+              <svg class="w-7 h-7 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 17H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2Z"/>
+                <path d="M7 9h10M7 9 9 5h6l2 4"/>
+                <circle cx="7.5" cy="17" r="1.5"/><circle cx="16.5" cy="17" r="1.5"/>
               </svg>
             </div>
             <h3 class="mt-4 font-semibold">Free Parking</h3>
@@ -129,8 +151,10 @@ import { clinics } from "../data/clinics";
 
           <div class="text-center p-6">
             <div class="w-14 h-14 mx-auto rounded-2xl bg-teal-100 flex items-center justify-center">
-              <svg class="w-7 h-7 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25m-2.25 0V5.625m0 0a3 3 0 00-3-3H6.75a3 3 0 00-3 3v.75" />
+              <!-- Lucide: bus -->
+              <svg class="w-7 h-7 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 6v6M3 6h18M3 12h18M3 6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h1v2h2v-2h12v2h2v-2h1a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2H3Z"/>
+                <circle cx="8" cy="17" r="1"/><circle cx="16" cy="17" r="1"/>
               </svg>
             </div>
             <h3 class="mt-4 font-semibold">Transit Access</h3>
@@ -139,8 +163,13 @@ import { clinics } from "../data/clinics";
 
           <div class="text-center p-6">
             <div class="w-14 h-14 mx-auto rounded-2xl bg-teal-100 flex items-center justify-center">
-              <svg class="w-7 h-7 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+              <!-- Lucide: accessibility -->
+              <svg class="w-7 h-7 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="16" cy="4" r="1"/>
+                <path d="m18 19 1-7-5.87.94"/>
+                <path d="m5 8 3-3 5 1 3 3h4"/>
+                <path d="M4.24 14.5a5 5 0 0 0 6.88 6"/>
+                <path d="M13.76 17.5a5 5 0 0 0-6.88-6"/>
               </svg>
             </div>
             <h3 class="mt-4 font-semibold">Accessible</h3>

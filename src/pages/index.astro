@@ -74,7 +74,7 @@ const features = [
       <div class="grid gap-8 md:grid-cols-3">
         {services.map((service) => (
           <div class="p-8 rounded-2xl bg-white hover:bg-teal-50 transition-colors group">
-            <div class="w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center text-teal-600 group-hover:bg-teal-600 group-hover:text-white transition-colors">
+            <div class="w-12 h-12 mx-auto rounded-xl bg-white shadow-sm flex items-center justify-center text-teal-600 group-hover:bg-teal-600 group-hover:text-white transition-colors">
               <Fragment set:html={service.icon} />
             </div>
             <h3 class="mt-5 text-xl font-semibold">{service.title}</h3>
