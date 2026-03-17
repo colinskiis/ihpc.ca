@@ -39,7 +39,7 @@ export const clinics: Clinic[] = [
     address: "1378 Bedford Highway, Bedford, NS B4A 1E2",
     url: "https://monaghanmed.ca/",
     phone: "902-800-3055",
-    hours: "Monday–Friday: 8:30 AM – 5:00 PM (by appointment)",
+    hours: "Monday-Friday: 8:30 AM – 5:00 PM (by appointment)",
     doctors: [
       {
         name: "Dr. Alexander Emeziem",
@@ -172,7 +172,7 @@ export const clinics: Clinic[] = [
         ],
         bookingUrl: "https://macleodnaturopathic.janeapp.com/",
         fax: "800-689-8264",
-        hours: "Mon–Fri: 7:30 AM – 3:30 PM",
+        hours: "Mon-Fri: 7:30 AM – 3:30 PM",
         website: "https://drcolinmacleod.com"
       }
     ],
@@ -195,7 +195,7 @@ export const clinics: Clinic[] = [
     description: "The Chronic Pain Clinic provides specialized assessment and treatment for patients living with chronic pain. Dr. Hernandez uses a comprehensive, injection-based approach to help patients reduce pain and improve quality of life, working collaboratively to find solutions beyond medication alone.",
     address: "1378 Bedford Highway, Bedford, NS B4A 1E2",
     phone: "902-407-4545",
-    hours: "Monday–Friday: 8:00 AM – 5:00 PM",
+    hours: "Monday-Friday: 8:00 AM – 5:00 PM",
     doctors: [
       {
         name: "Dr. Maria del Rosario Hernandez",
