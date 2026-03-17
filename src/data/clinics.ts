@@ -46,7 +46,7 @@ export const clinics: Clinic[] = [
         credentials: "MD",
         slug: "alexander-emeziem",
         photo: "/images/doctors/alexander-emeziem.png",
-        bio: "Dr. Emeziem is a dedicated family physician known for his compassionate, patient-centered approach to care. He takes the time to truly listen to his patients and their families, developing treatment plans that address the whole person. His patients describe him as professional, understanding, and passionate about their wellbeing.",
+        bio: "Dr. Emeziem is a dedicated family physician known for his compassionate, patient-centered approach to care. He takes the time to truly listen to his patients and their families, developing treatment plans that address the whole person. His patients describe him as professional, understanding and passionate about their wellbeing.",
         education: [
           "Doctor of Medicine",
           "Licensed with College of Physicians & Surgeons of Nova Scotia"
@@ -111,7 +111,7 @@ export const clinics: Clinic[] = [
           "Doctor of Naturopathic Medicine, Canadian College of Naturopathic Medicine (CCNM)",
           "Bachelor of Science, Memorial University of Newfoundland",
           "Licensed Medical Laboratory Technologist",
-          "Advanced training in IV therapy, ozone therapy, prolotherapy, and neural therapy"
+          "Advanced training in IV therapy, ozone therapy, prolotherapy and neural therapy"
         ],
         specialties: [
           "Pediatrics",
