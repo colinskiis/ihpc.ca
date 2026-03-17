@@ -4,7 +4,6 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { clinics } from "../data/clinics";
 
-const totalDoctors = clinics.reduce((sum, clinic) => sum + clinic.doctors.length, 0);
 
 
 ---
@@ -46,23 +45,26 @@ const totalDoctors = clinics.reduce((sum, clinic) => sum + clinic.doctors.length
             billing, reception and patient relationships.
           </p>
         </div>
-        <div class="grid grid-cols-2 gap-4">
-          <div class="p-6 rounded-2xl bg-teal-50 text-center">
-            <p class="text-4xl font-bold text-teal-600">{clinics.length}</p>
-            <p class="mt-1 text-slate-600">Clinics</p>
-          </div>
-          <div class="p-6 rounded-2xl bg-teal-50 text-center">
-            <p class="text-4xl font-bold text-teal-600">{totalDoctors}</p>
-            <p class="mt-1 text-slate-600">Practitioners</p>
-          </div>
-          <div class="p-6 rounded-2xl bg-slate-100 text-center">
-            <p class="text-4xl font-bold text-slate-700">3</p>
-            <p class="mt-1 text-slate-600">Specialties</p>
-          </div>
-          <div class="p-6 rounded-2xl bg-slate-100 text-center">
-            <p class="text-4xl font-bold text-slate-700">1</p>
-            <p class="mt-1 text-slate-600">Convenient Location</p>
-          </div>
+        <div class="space-y-3">
+          {clinics.flatMap((clinic) => clinic.doctors.map((doctor) => (
+            <a href={`/clinics/${clinic.slug}`} class="flex items-center gap-4 p-4 rounded-xl bg-white border border-slate-100 shadow-sm hover:border-teal-200 hover:shadow-md transition-all group">
+              {doctor.photo ? (
+                <img
+                  src={doctor.photo}
+                  alt={doctor.name}
+                  class="w-14 h-14 rounded-full object-cover shrink-0"
+                />
+              ) : (
+                <div class="w-14 h-14 rounded-full bg-gradient-to-br from-teal-400 to-teal-600 flex items-center justify-center text-white font-semibold shrink-0">
+                  {doctor.name.split(' ').slice(1).map((n: string) => n[0]).join('')}
+                </div>
+              )}
+              <div class="min-w-0">
+                <p class="font-semibold text-slate-900 group-hover:text-teal-700 transition-colors">{doctor.name}, {doctor.credentials}</p>
+                <p class="text-sm text-teal-600 mt-0.5">{clinic.tagline}</p>
+              </div>
+            </a>
+          )))}
         </div>
       </div>
     </div>
