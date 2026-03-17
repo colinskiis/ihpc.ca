@@ -96,7 +96,7 @@ const features = [
       <div class="grid gap-6 lg:grid-cols-3">
         {clinics.map((clinic) => (
           <a href={`/clinics/${clinic.slug}`} class="card group">
-            <div class="p-6">
+            <div class="p-6 flex flex-col h-full">
               <div class="flex items-start justify-between">
                 <div>
                   <span class="badge">{clinic.type === "family-medicine" ? "Family Medicine" : clinic.type === "naturopathic" ? "Naturopathic" : "Pain Management"}</span>
@@ -107,7 +107,7 @@ const features = [
                 </svg>
               </div>
               <p class="mt-3 text-slate-600">{clinic.tagline}</p>
-              <div class="mt-4 pt-4 border-t border-slate-100 flex items-center gap-2">
+              <div class="mt-auto pt-4 border-t border-slate-100 flex items-center gap-2">
                 {clinic.doctors.map((doctor) => (
                   doctor.photo ? (
                     <img
