@@ -31,11 +31,11 @@ export interface Clinic {
 
 export const clinics: Clinic[] = [
   {
-    name: "Monaghan Medical Clinic",
-    slug: "monaghan-medical",
+    name: "Maple Cove Health Group",
+    slug: "maple-cove-health",
     type: "family-medicine",
     tagline: "Family Medicine",
-    description: "Monaghan Medical Clinic provides comprehensive primary care services with a focus on building lasting relationships with patients and families. Our physicians take the time to listen and develop personalized care plans.",
+    description: "Maple Cove Health Group provides comprehensive primary care services with a focus on building lasting relationships with patients and families. Our physicians take the time to listen and develop personalized care plans.",
     address: "1378 Bedford Highway, Bedford, NS B4A 1E2",
     url: "https://monaghanmed.ca/",
     phone: "902-800-3055",
@@ -136,7 +136,8 @@ export const clinics: Clinic[] = [
           "Canadian Association of Naturopathic Doctors",
           "Nova Scotia Association of Naturopathic Doctors"
         ],
-        fax: "902-406-4428"
+        fax: "902-406-4428",
+        website: "https://optimalwellbeing.ca/"
       },
       {
         name: "Dr. Colin MacLeod",
