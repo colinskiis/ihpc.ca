@@ -5,8 +5,6 @@ export interface Doctor {
   photo?: string;
   bio: string;
   education: string[];
-  specialties: string[];
-  services?: string[];
   bookingUrl?: string;
   fax?: string;
   hours?: string;
@@ -26,7 +24,6 @@ export interface Clinic {
   fax?: string;
   hours?: string;
   doctors: Doctor[];
-  services: string[];
 }
 
 export const clinics: Clinic[] = [
@@ -51,13 +48,6 @@ export const clinics: Clinic[] = [
           "Doctor of Medicine",
           "Licensed with College of Physicians & Surgeons of Nova Scotia"
         ],
-        specialties: [
-          "Family Medicine",
-          "Preventive Care",
-          "Chronic Disease Management",
-          "Women's Health",
-          "IUD Insertions"
-        ],
         bookingUrl: "https://portal.healthmyself.net/dremeziem",
         fax: "833-444-0348"
       },
@@ -71,23 +61,9 @@ export const clinics: Clinic[] = [
           "Doctor of Medicine",
           "Licensed with College of Physicians & Surgeons of Nova Scotia"
         ],
-        specialties: [
-          "Family Medicine",
-          "Preventive Care",
-          "Chronic Disease Management",
-          "Men's Health"
-        ],
         bookingUrl: "https://portal.healthmyself.net/drolababatolu",
         fax: "833-999-0844"
       }
-    ],
-    services: [
-      "Annual physicals and wellness exams",
-      "Chronic disease management",
-      "Preventive care and health screenings",
-      "Women's and men's health",
-      "Minor procedures",
-      "Referrals to specialists"
     ]
   },
   {
@@ -113,25 +89,6 @@ export const clinics: Clinic[] = [
           "Licensed Medical Laboratory Technologist",
           "Advanced training in IV therapy, ozone therapy, prolotherapy and neural therapy"
         ],
-        specialties: [
-          "Pediatrics",
-          "Allergies & Asthma",
-          "Metabolic Conditions",
-          "Digestive Disorders",
-          "Cardiovascular Health",
-          "Autoimmune Conditions",
-          "Hormonal Health",
-          "Integrated Oncology",
-          "Pain Management"
-        ],
-        services: [
-          "Acupuncture",
-          "Botanical Medicine",
-          "Clinical Nutrition",
-          "IV Nutrient Therapy",
-          "Homeopathic Medicine",
-          "Traditional Chinese Medicine"
-        ],
         memberships: [
           "Canadian Association of Naturopathic Doctors",
           "Nova Scotia Association of Naturopathic Doctors"
@@ -151,22 +108,6 @@ export const clinics: Clinic[] = [
           "Advanced training in prolotherapy and regenerative injection therapies",
           "Certified in intravenous therapy"
         ],
-        specialties: [
-          "Chronic Pain Management",
-          "Musculoskeletal Injuries",
-          "Weight Management",
-          "Digestive Health",
-          "Cardiovascular Health",
-          "Fatigue & Energy Disorders",
-          "Cancer Care Support"
-        ],
-        services: [
-          "Prolotherapy (regenerative injections)",
-          "IV Nutrient Therapy",
-          "Acupuncture",
-          "Clinical Nutrition",
-          "Herbal Medicine"
-        ],
         memberships: [
           "Nova Scotia Association of Naturopathic Doctors",
           "Canadian Association of Naturopathic Doctors"
@@ -176,16 +117,6 @@ export const clinics: Clinic[] = [
         hours: "Mon-Fri: 7:30 AM – 3:30 PM",
         website: "https://drcolinmacleod.com"
       }
-    ],
-    services: [
-      "IV Nutrient Therapy (Vitamin C, Myers' Cocktail, Glutathione)",
-      "Prolotherapy & Regenerative Injections",
-      "Acupuncture",
-      "Clinical Nutrition & Lifestyle Counselling",
-      "Botanical & Herbal Medicine",
-      "Laboratory Testing",
-      "Ozone Therapy",
-      "Neural Therapy"
     ]
   },
   {
@@ -193,7 +124,7 @@ export const clinics: Clinic[] = [
     slug: "chronic-pain",
     type: "pain-management",
     tagline: "Specialized care for chronic pain",
-    description: "The Chronic Pain Clinic provides specialized assessment and treatment for patients living with chronic pain. Dr. Hernandez uses a comprehensive, injection-based approach to help patients reduce pain and improve quality of life, working collaboratively to find solutions beyond medication alone.",
+    description: "The Chronic Pain Clinic provides specialized assessment and treatment for patients living with chronic pain. Dr. Hernandez works collaboratively with patients to help reduce pain and improve quality of life.",
     address: "1378 Bedford Highway, Bedford, NS B4A 1E2",
     phone: "902-407-4545",
     hours: "Monday-Friday: 8:00 AM – 5:00 PM",
@@ -207,24 +138,8 @@ export const clinics: Clinic[] = [
           "Doctor of Medicine",
           "Residency at Dalhousie University",
           "Licensed with College of Physicians & Surgeons of Nova Scotia"
-        ],
-        specialties: [
-          "Chronic Pain Management",
-          "Migraine & Headache Treatment",
-          "TMJ & Facial Pain",
-          "Trigeminal Neuralgia",
-          "Back Pain & Spinal Conditions",
-          "Injection Therapies"
         ]
       }
-    ],
-    services: [
-      "Comprehensive pain assessment",
-      "Injection therapies for chronic pain",
-      "Migraine treatment",
-      "TMJ and facial pain management",
-      "Spinal pain management",
-      "Collaborative care planning"
     ]
   }
 ];

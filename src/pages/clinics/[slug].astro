@@ -153,18 +153,6 @@ function getClinicTypeLabel(type: string): string {
                         </div>
                       )}
 
-                      <!-- Specialties -->
-                      {doctor.specialties && doctor.specialties.length > 0 && (
-                        <div class="mt-4">
-                          <h4 class="text-sm font-semibold text-slate-900 uppercase tracking-wide">Areas of Focus</h4>
-                          <div class="mt-2 flex flex-wrap gap-2">
-                            {doctor.specialties.map((specialty) => (
-                              <span class="px-3 py-1 bg-teal-50 text-teal-700 text-sm rounded-full">{specialty}</span>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-
                       <!-- Hours & Website -->
                       {(doctor.hours || doctor.website) && (
                         <div class="mt-4 flex flex-wrap gap-4 text-sm text-slate-600">
@@ -208,21 +196,6 @@ function getClinicTypeLabel(type: string): string {
 
         <!-- Sidebar -->
         <div class="space-y-8">
-          <!-- Services Card -->
-          <div class="card p-6">
-            <h3 class="text-lg font-semibold">Services Offered</h3>
-            <ul class="mt-4 space-y-3">
-              {clinic.services.map((service) => (
-                <li class="flex items-start gap-3 text-slate-600">
-                  <svg class="w-5 h-5 text-teal-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  {service}
-                </li>
-              ))}
-            </ul>
-          </div>
-
           <!-- Location Card -->
           <div class="card p-6">
             <h3 class="text-lg font-semibold">Location</h3>
@@ -252,7 +225,7 @@ function getClinicTypeLabel(type: string): string {
           <div class="card p-6 bg-teal-50 border-teal-100">
             <h3 class="text-lg font-semibold">Get in Touch</h3>
             <p class="mt-2 text-slate-600">
-              Call this clinic directly for information about services or to speak with their team.
+              Call this clinic directly for more information or to speak with their team.
             </p>
             {clinic.phone && (
               <a href={`tel:${clinic.phone.replace(/\s+/g, '')}`} class="mt-4 btn btn-primary w-full justify-center">

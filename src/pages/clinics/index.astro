@@ -63,19 +63,6 @@ function getClinicTypeLabel(type: string): string {
 
               <p class="mt-4 text-slate-600">{clinic.description}</p>
 
-              <!-- Services -->
-              <div class="mt-6">
-                <h4 class="text-sm font-semibold text-slate-900 uppercase tracking-wide">Services</h4>
-                <div class="mt-3 flex flex-wrap gap-2">
-                  {clinic.services.slice(0, 6).map((service) => (
-                    <span class="px-3 py-1 bg-slate-100 text-slate-700 text-sm rounded-full">{service}</span>
-                  ))}
-                  {clinic.services.length > 6 && (
-                    <span class="px-3 py-1 bg-slate-100 text-slate-500 text-sm rounded-full">+{clinic.services.length - 6} more</span>
-                  )}
-                </div>
-              </div>
-
               <!-- Practitioners -->
               <div class="mt-8 pt-8 border-t border-slate-200">
                 <h4 class="text-sm font-semibold text-slate-900 uppercase tracking-wide mb-4">Practitioners</h4>
