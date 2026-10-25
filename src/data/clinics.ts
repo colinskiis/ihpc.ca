@@ -104,7 +104,6 @@ export const clinics: Clinic[] = [
         bio: "Dr. MacLeod grew up in Cape Breton and has been practicing naturopathic medicine in Halifax since 2011. He integrates traditional healing wisdom with modern scientific research to develop individualized treatment plans. Outside of practice, he's an avid runner who has completed the Bluenose Marathon.",
         education: [
           "Doctor of Naturopathic Medicine, Canadian College of Naturopathic Medicine (CCNM)",
-          "Bachelor of Science (Biology), Saint Mary's University",
           "Advanced training in prolotherapy and regenerative injection therapies",
           "Certified in intravenous therapy"
         ],
