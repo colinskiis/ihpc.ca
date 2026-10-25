@@ -1,0 +1,73 @@
+name: Deploy production site
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: production-deployment
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: vars.NAMECHEAP_DEPLOY_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: production
+      url: https://ihpc.ca
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build site
+        run: npm run build
+
+      - name: Configure SSH
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.NAMECHEAP_SSH_PRIVATE_KEY }}
+          SSH_KNOWN_HOSTS: ${{ secrets.NAMECHEAP_KNOWN_HOSTS }}
+        run: |
+          install -d -m 700 ~/.ssh
+          printf '%s\n' "$SSH_PRIVATE_KEY" > ~/.ssh/namecheap_deploy
+          chmod 600 ~/.ssh/namecheap_deploy
+          printf '%s\n' "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/known_hosts
+
+      - name: Deploy with rsync
+        run: |
+          rsync -az --delete --timeout=300 --stats \
+            --exclude '.well-known/' \
+            -e "ssh -i ~/.ssh/namecheap_deploy -o BatchMode=yes -o IdentitiesOnly=yes -p 21098" \
+            dist/ \
+            drcohmrh@business81.web-hosting.com:~/ihpc.ca/
+
+      - name: Verify production
+        run: |
+          echo "Expecting build ${GITHUB_SHA}"
+
+          deployed_id="$(ssh -i ~/.ssh/namecheap_deploy \
+            -o BatchMode=yes -o IdentitiesOnly=yes -p 21098 \
+            drcohmrh@business81.web-hosting.com \
+            "cat ~/ihpc.ca/build-id.txt" 2>/dev/null | tr -d '[:space:]' || true)"
+
+          if [[ "$deployed_id" != "$GITHUB_SHA" ]]; then
+            echo "Origin is serving build '${deployed_id:-<empty>}', expected ${GITHUB_SHA}."
+            exit 1
+          fi
+          echo "Origin confirmed serving ${GITHUB_SHA}."
